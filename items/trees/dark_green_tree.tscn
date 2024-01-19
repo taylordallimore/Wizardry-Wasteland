@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2g6t41m4aier"]
+
+[ext_resource type="Texture2D" uid="uid://k051m6py7gvu" path="res://common/assets/Forest BETA V3/dark_green_tree.png" id="1_r6tab"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjeai"]
+radius = 37.0
+height = 82.0
+
+[node name="dark_green_tree" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CapsuleShape2D_cjeai")
+
+[node name="DarkGreenTree" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, 0.999996)
+scale = Vector2(0.541667, 0.559211)
+texture = ExtResource("1_r6tab")
