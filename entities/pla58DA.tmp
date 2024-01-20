@@ -1,7 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://capljoi400fry"]
+[gd_scene load_steps=29 format=3 uid="uid://capljoi400fry"]
 
 [ext_resource type="Texture2D" uid="uid://cwd2ksk7rhqoj" path="res://common/assets/AnimationSheet_Character.png" id="1_1hbwe"]
-[ext_resource type="PackedScene" uid="uid://b240o8ic7ajmf" path="res://entities/gun.tscn" id="2_6jp28"]
 
 [sub_resource type="GDScript" id="GDScript_53pd3"]
 script/source = "extends CharacterBody2D
@@ -11,25 +10,19 @@ var speed = 200
 
 
 func _process(_delta):
-	if Input.is_action_pressed(\"right\"):
-		anim.play(\"run_right\")
-		get_node(\"AnimatedSprite2D\").flip_h = false
-	
-	elif Input.is_action_pressed(\"left\"):
-		anim.play(\"run_right\")
-		get_node(\"AnimatedSprite2D\").flip_h = true
-		
-		
-	
+	if Input.is_action_pressed(\"ui_right\"):
+		anim.play(\"walk\")
 	else:
 		anim.play(\"idle\")
+	
 		
 func _physics_process(delta):
-	var direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	var direction = Input.get_vector(\"ui_left\", \"ui_right\", \"ui_up\", \"ui_down\")
 	velocity = direction * speed
 	#animation.play(\"idle\")
 	move_and_slide()
 	
+
 	
 "
 
@@ -130,8 +123,8 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_l1mmr"]
-resource_name = "run_right"
-length = 1.5
+resource_name = "run"
+length = 10.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -152,23 +145,17 @@ tracks/1/path = NodePath("../AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2),
+"times": PackedFloat32Array(0, 0.7, 0.8, 0.9, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 2, 3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_7k3ui"]
-resource_name = "magic1"
-length = 2.7
-loop_mode = 1
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vweqc"]
 _data = {
 "RESET": SubResource("Animation_u7yph"),
 "idle": SubResource("Animation_3b3ia"),
-"magic1": SubResource("Animation_7k3ui"),
-"run_right": SubResource("Animation_l1mmr")
+"run": SubResource("Animation_l1mmr")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_te3ty"]
@@ -240,33 +227,33 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = SubResource("GDScript_53pd3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_5sqwi")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(2, 2)
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="CharacterBody2D"]
 tree_root = SubResource("AnimationNodeStateMachine_85gkt")
 anim_player = NodePath("../AnimationPlayer")
 parameters/idle/TimeScale/scale = 1.0
 parameters/idle/idle_bs2d/blend_position = Vector2(0, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
 root_node = NodePath("../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_vweqc")
 }
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 texture_filter = 1
 position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(0.858388, 0.858388)
 sprite_frames = SubResource("SpriteFrames_7c7g2")
 animation = &"walk"
 frame = 1
-
-[node name="Area2D" parent="." instance=ExtResource("2_6jp28")]
