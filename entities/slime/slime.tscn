@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bsvt353o1k28i"]
 
-[ext_resource type="Script" path="res://Slime.gd" id="1_jdpa3"]
+[ext_resource type="Script" path="res://entities/slime/Slime.gd" id="1_jdpa3"]
 [ext_resource type="Texture2D" uid="uid://deihtuux677jo" path="res://common/assets/Slime red.png" id="2_t4xnv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3br1x"]

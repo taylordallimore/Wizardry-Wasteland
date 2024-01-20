@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://do20qga8p4tgd"]
+[gd_scene load_steps=5 format=3 uid="uid://jgem82x8umbu"]
 
 [ext_resource type="Texture2D" uid="uid://dfgtradnq23a2" path="res://common/assets/Forest BETA V3/TX Tileset Wall.png" id="1_x2thm"]
 [ext_resource type="PackedScene" uid="uid://bwer3iowqj34f" path="res://common/healthbar/healthbar.tscn" id="2_u5vcr"]

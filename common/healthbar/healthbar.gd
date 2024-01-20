@@ -3,8 +3,6 @@ extends Control
 @onready var health_bar = $Healthbar
 @onready var player = get_node("/root/Level_1/player")
 
-signal health_changed(health)
-
 
 func _ready():
 

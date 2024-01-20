@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://b240o8ic7ajmf"]
 
-[ext_resource type="Script" path="res://entities/gun.gd" id="1_a6ag5"]
+[ext_resource type="Script" path="res://entities/player/attacks/gun.gd" id="1_a6ag5"]
 [ext_resource type="Texture2D" uid="uid://uk3ijds7mq6c" path="res://common/assets/magic_spells/fireball/FB500-1.png" id="2_hl0gu"]
 [ext_resource type="Texture2D" uid="uid://bqflv5yv7iso3" path="res://common/assets/magic_spells/fireball/FB500-2.png" id="3_irvb1"]
 [ext_resource type="Texture2D" uid="uid://dxflbp0xrm5se" path="res://common/assets/magic_spells/fireball/FB500-3.png" id="4_jlhsm"]
 [ext_resource type="Texture2D" uid="uid://cbs4ruoqjcee8" path="res://common/assets/magic_spells/fireball/FB500-4.png" id="5_hdt1e"]
 [ext_resource type="Texture2D" uid="uid://cc8kn785fg1g0" path="res://common/assets/magic_spells/fireball/FB500-5.png" id="6_riet3"]
-[ext_resource type="Script" path="res://entities/AnimatedSprite2D.gd" id="7_vk2qi"]
+[ext_resource type="Script" path="res://entities/player/AnimatedSprite2D.gd" id="7_vk2qi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_drhbb"]
 radius = 155.081
