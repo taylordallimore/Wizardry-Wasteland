@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b240o8ic7ajmf"]
+
+[ext_resource type="Texture2D" uid="uid://boniqr681ffad" path="res://common/assets/magic_spells/X_plosion/PNG/frame0001.png" id="1_0onwk"]
+[ext_resource type="Script" path="res://entities/gun.gd" id="1_a6ag5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_drhbb"]
+radius = 155.081
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_a6ag5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_drhbb")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Frame0001" type="Sprite2D" parent="Marker2D"]
+position = Vector2(21, 0)
+texture = ExtResource("1_0onwk")
+
+[node name="ShootingPoint" type="Marker2D" parent="Marker2D/Frame0001"]
