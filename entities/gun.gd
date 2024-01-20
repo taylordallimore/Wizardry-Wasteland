@@ -17,4 +17,6 @@ func shoot():
 	%ShootingPoint.add_child(new_bullet)
 	
 func _on_timer_timeout():
-	shoot()
+	var enemies_in_range = get_overlapping_bodies()
+	if enemies_in_range.size() > 0:
+		shoot()
