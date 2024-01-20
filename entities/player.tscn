@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://capljoi400fry"]
 
-[ext_resource type="Texture2D" uid="uid://cwd2ksk7rhqoj" path="res://common/assets/AnimationSheet_Character.png" id="1_1hbwe"]
+[ext_resource type="Texture2D" uid="uid://bw01sg28sb6iu" path="res://common/assets/AnimationSheet_Character.png" id="1_1hbwe"]
 [ext_resource type="PackedScene" uid="uid://b240o8ic7ajmf" path="res://entities/gun.tscn" id="2_6jp28"]
 
 [sub_resource type="GDScript" id="GDScript_53pd3"]
@@ -9,6 +9,16 @@ script/source = "extends CharacterBody2D
 @onready var anim = $AnimationPlayer
 var speed = 200  
 
+
+signal health_updated(new_value)
+signal killed()
+
+
+@onready var health: float = 100.0
+
+func _ready():
+	emit_signal(\"health_updated\", health)
+	pass
 
 func _process(_delta):
 	if Input.is_action_pressed(\"right\"):
@@ -30,7 +40,20 @@ func _physics_process(delta):
 	#animation.play(\"idle\")
 	move_and_slide()
 	
+func kill():
+	pass
 	
+func damage(damage):
+	health -= damage
+	set_health(health)
+
+
+func set_health(new_value):
+	var prevhealth = health
+	health = clamp(new_value, 0 ,100)
+	emit_signal(\"health_updated\", health)
+	
+
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5sqwi"]
