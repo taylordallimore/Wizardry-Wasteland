@@ -9,7 +9,6 @@ script/source = "extends CharacterBody2D
 @onready var anim = $AnimationPlayer
 var speed = 200  
 
-
 signal health_updated(new_value)
 signal killed()
 
@@ -29,8 +28,6 @@ func _process(_delta):
 		anim.play(\"run_right\")
 		get_node(\"AnimatedSprite2D\").flip_h = true
 		
-		
-	
 	else:
 		anim.play(\"idle\")
 		
@@ -57,8 +54,8 @@ func set_health(new_value):
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5sqwi"]
-radius = 6.0
-height = 20.0
+radius = 8.0
+height = 26.0
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_xc2it"]
 
@@ -267,6 +264,7 @@ animations = [{
 script = SubResource("GDScript_53pd3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_5sqwi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -293,3 +291,4 @@ animation = &"walk"
 frame = 1
 
 [node name="Area2D" parent="." instance=ExtResource("2_6jp28")]
+texture_filter = 1
