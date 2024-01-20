@@ -16,9 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://cvonwoo3qp1h0" path="res://common/assets/Forest BETA V3/TX Tileset Wall.png" id="14_3ilhd"]
 [ext_resource type="Texture2D" uid="uid://bpdktj8gll4vy" path="res://common/assets/Forest BETA V3/TX Plant.png" id="15_qywd1"]
 [ext_resource type="Texture2D" uid="uid://divgugkgnprsm" path="res://common/assets/Forest BETA V3/TX Player.png" id="16_6wlcg"]
-[ext_resource type="PackedScene" uid="uid://capljoi400fry" path="res://entities/player.tscn" id="17_cqhg7"]
-[ext_resource type="PackedScene" path="res://ui.tscn" id="18_nrq8t"]
-[ext_resource type="PackedScene" uid="uid://bsvt353o1k28i" path="res://entities/slime.tscn" id="19_6c1mx"]
+[ext_resource type="PackedScene" uid="uid://ci6luxbnpbel8" path="res://entities/player/player.tscn" id="17_cqhg7"]
+[ext_resource type="PackedScene" uid="uid://jgem82x8umbu" path="res://levels/ui_scenes/ui.tscn" id="18_nrq8t"]
+[ext_resource type="PackedScene" uid="uid://bsvt353o1k28i" path="res://entities/slime/slime.tscn" id="19_6c1mx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjnnu"]
 texture = ExtResource("1_u507a")

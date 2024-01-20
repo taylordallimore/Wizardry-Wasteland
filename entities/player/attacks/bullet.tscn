@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmich4lwu1lw4"]
+[gd_scene load_steps=12 format=3 uid="uid://f0sw8fpdn1gj"]
 
-[ext_resource type="Script" path="res://entities/bullet.gd" id="1_j3wth"]
+[ext_resource type="Script" path="res://entities/player/attacks/bullet.gd" id="1_j3wth"]
 [ext_resource type="Texture2D" uid="uid://uk3ijds7mq6c" path="res://common/assets/magic_spells/fireball/FB500-1.png" id="2_powul"]
 [ext_resource type="Texture2D" uid="uid://bqflv5yv7iso3" path="res://common/assets/magic_spells/fireball/FB500-2.png" id="3_x6680"]
 [ext_resource type="Texture2D" uid="uid://dxflbp0xrm5se" path="res://common/assets/magic_spells/fireball/FB500-3.png" id="4_52s10"]

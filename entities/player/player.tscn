@@ -1,14 +1,19 @@
-[gd_scene load_steps=32 format=3 uid="uid://capljoi400fry"]
+[gd_scene load_steps=32 format=3 uid="uid://ci6luxbnpbel8"]
 
 [ext_resource type="Texture2D" uid="uid://cwd2ksk7rhqoj" path="res://common/assets/AnimationSheet_Character.png" id="1_1hbwe"]
-[ext_resource type="PackedScene" uid="uid://b240o8ic7ajmf" path="res://entities/gun.tscn" id="2_6jp28"]
+[ext_resource type="PackedScene" uid="uid://b240o8ic7ajmf" path="res://entities/player/attacks/gun.tscn" id="2_6jp28"]
 
 [sub_resource type="GDScript" id="GDScript_53pd3"]
 script/source = "extends CharacterBody2D
 signal health_depleted
+var health = 100.0
 @onready var anim = $AnimationPlayer
 var speed = 200  
-var health = 100.0
+
+signal health_updated(new_value)
+
+func _ready():
+	emit_signal(\"health_updated\")
 
 func _process(_delta):
 	if Input.is_action_pressed(\"right\"):
@@ -35,6 +40,8 @@ func _physics_process(delta):
 		if health <= 0.0:
 			health_depleted.emit()
 	
+
+
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5sqwi"]
@@ -244,9 +251,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jp6r"]
-radius = 8.0
-height = 26.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfoxo"]
+radius = 11.0
+height = 42.0
 
 [node name="player" type="CharacterBody2D"]
 script = SubResource("GDScript_53pd3")
@@ -283,10 +290,11 @@ texture_filter = 1
 
 [node name="hurtbix" type="Area2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(8, 5)
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbix"]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_1jp6r")
-debug_color = Color(0.960784, 0.160784, 0.305882, 0.419608)
+position = Vector2(-8, -5)
+shape = SubResource("CapsuleShape2D_gfoxo")
+debug_color = Color(0.976471, 0, 0.423529, 0.419608)
