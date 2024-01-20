@@ -129,6 +129,11 @@ tracks/1/keys = {
 "values": [1, 0]
 }
 
+[sub_resource type="Animation" id="Animation_7k3ui"]
+resource_name = "magic1"
+length = 2.7
+loop_mode = 1
+
 [sub_resource type="Animation" id="Animation_l1mmr"]
 resource_name = "run_right"
 length = 1.5
@@ -157,11 +162,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 2, 3, 4, 5]
 }
-
-[sub_resource type="Animation" id="Animation_7k3ui"]
-resource_name = "magic1"
-length = 2.7
-loop_mode = 1
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vweqc"]
 _data = {
