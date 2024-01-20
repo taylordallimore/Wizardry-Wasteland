@@ -1,13 +1,14 @@
-[gd_scene load_steps=31 format=3 uid="uid://capljoi400fry"]
+[gd_scene load_steps=32 format=3 uid="uid://capljoi400fry"]
 
 [ext_resource type="Texture2D" uid="uid://cwd2ksk7rhqoj" path="res://common/assets/AnimationSheet_Character.png" id="1_1hbwe"]
 [ext_resource type="PackedScene" uid="uid://b240o8ic7ajmf" path="res://entities/gun.tscn" id="2_6jp28"]
 
 [sub_resource type="GDScript" id="GDScript_53pd3"]
 script/source = "extends CharacterBody2D
-
+signal health_depleted
 @onready var anim = $AnimationPlayer
 var speed = 200  
+var health = 100.0
 
 func _process(_delta):
 	if Input.is_action_pressed(\"right\"):
@@ -27,6 +28,12 @@ func _physics_process(delta):
 	#animation.play(\"idle\")
 	move_and_slide()
 	
+	const DAMAGE_RATE = 5.0
+	var overlapping_mobs = %hurtbix.get_overlapping_bodies()
+	if overlapping_mobs.size() > 0:
+		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
+		if health <= 0.0:
+			health_depleted.emit()
 	
 "
 
@@ -237,6 +244,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jp6r"]
+radius = 8.0
+height = 26.0
+
 [node name="player" type="CharacterBody2D"]
 script = SubResource("GDScript_53pd3")
 
@@ -269,3 +280,13 @@ frame = 1
 
 [node name="Area2D" parent="." instance=ExtResource("2_6jp28")]
 texture_filter = 1
+
+[node name="hurtbix" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbix"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_1jp6r")
+debug_color = Color(0.960784, 0.160784, 0.305882, 0.419608)
