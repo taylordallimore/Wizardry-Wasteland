@@ -26947,6 +26947,7 @@ layer_6/tile_data = PackedInt32Array(1179706, 65540, 2, 1179707, 65540, 2, 11797
 position = Vector2(636, 30)
 
 [node name="UI" parent="player" instance=ExtResource("18_nrq8t")]
+position = Vector2(61, 44)
 
 [node name="Slime" parent="." instance=ExtResource("19_6c1mx")]
 position = Vector2(-33, -74)
