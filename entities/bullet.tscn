@@ -33,6 +33,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_kkai5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
 [sub_resource type="Animation" id="Animation_yiw3w"]
 resource_name = "idle"
 length = 0.5
@@ -62,21 +77,6 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
-[sub_resource type="Animation" id="Animation_kkai5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hhowm"]
 _data = {
 "RESET": SubResource("Animation_kkai5"),
@@ -91,6 +91,7 @@ collision_mask = 3
 script = ExtResource("1_j3wth")
 
 [node name="Frame0007" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(-1.90735e-06, 0)
 scale = Vector2(0.084158, 0.084158)
@@ -100,8 +101,7 @@ texture = ExtResource("2_powul")
 shape = SubResource("CircleShape2D_7b2f3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.90735e-06, 0)
-scale = Vector2(0.084158, 0.084158)
+scale = Vector2(0.0575343, 0.0575343)
 sprite_frames = SubResource("SpriteFrames_jdwul")
 animation = &"idle"
 frame = 1

@@ -1,8 +1,6 @@
 extends Area2D
 var travelled_distance = 0
 
-
-
 func _physics_process(delta):
 	const SPEED = 1000
 	const RANGE = 1200
@@ -13,7 +11,6 @@ func _physics_process(delta):
 	travelled_distance += SPEED * delta
 	if travelled_distance > RANGE:
 		queue_free()
-
 
 func _on_body_entered(body:Node2D):
 	queue_free()
