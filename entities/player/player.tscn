@@ -1,7 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://ci6luxbnpbel8"]
+[gd_scene load_steps=34 format=3 uid="uid://ci6luxbnpbel8"]
 
-[ext_resource type="Texture2D" uid="uid://cwd2ksk7rhqoj" path="res://common/assets/AnimationSheet_Character.png" id="1_1hbwe"]
 [ext_resource type="PackedScene" uid="uid://b240o8ic7ajmf" path="res://entities/player/attacks/gun.tscn" id="2_6jp28"]
+[ext_resource type="Texture2D" uid="uid://b2ym4cb8dptti" path="res://common/assets/wizard.png" id="2_cliwu"]
 
 [sub_resource type="GDScript" id="GDScript_53pd3"]
 script/source = "extends CharacterBody2D
@@ -13,7 +13,7 @@ var speed = 200
 signal health_updated(new_value)
 
 func _ready():
-	emit_signal(\"health_updated\")
+	emit_signal(\"health_updated\", 100)
 
 func _process(_delta):
 	if Input.is_action_pressed(\"right\"):
@@ -33,10 +33,11 @@ func _physics_process(delta):
 	#animation.play(\"idle\")
 	move_and_slide()
 	
-	const DAMAGE_RATE = 500.0
+	const DAMAGE_RATE = 10.0
 	var overlapping_mobs = %hurtbix.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
+		emit_signal(\"health_updated\", health)
 		if health <= 0.0:
 			health_depleted.emit()
 	
@@ -182,46 +183,54 @@ _data = {
 "run_right": SubResource("Animation_l1mmr")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_te3ty"]
-atlas = ExtResource("1_1hbwe")
+[sub_resource type="AtlasTexture" id="AtlasTexture_odxmt"]
+atlas = ExtResource("2_cliwu")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s3uhu"]
-atlas = ExtResource("1_1hbwe")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x42fo"]
+atlas = ExtResource("2_cliwu")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5al46"]
-atlas = ExtResource("1_1hbwe")
-region = Rect2(0, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyc3v"]
+atlas = ExtResource("2_cliwu")
+region = Rect2(0, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s2i53"]
-atlas = ExtResource("1_1hbwe")
-region = Rect2(32, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyca6"]
+atlas = ExtResource("2_cliwu")
+region = Rect2(32, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_07apq"]
-atlas = ExtResource("1_1hbwe")
-region = Rect2(64, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0x0h"]
+atlas = ExtResource("2_cliwu")
+region = Rect2(64, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n2sqo"]
-atlas = ExtResource("1_1hbwe")
-region = Rect2(96, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6gut"]
+atlas = ExtResource("2_cliwu")
+region = Rect2(96, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yk51h"]
-atlas = ExtResource("1_1hbwe")
-region = Rect2(128, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_05u66"]
+atlas = ExtResource("2_cliwu")
+region = Rect2(128, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kur26"]
-atlas = ExtResource("1_1hbwe")
-region = Rect2(160, 64, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_shass"]
+atlas = ExtResource("2_cliwu")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i17fj"]
+atlas = ExtResource("2_cliwu")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nnyn"]
+atlas = ExtResource("2_cliwu")
+region = Rect2(224, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7c7g2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_te3ty")
+"texture": SubResource("AtlasTexture_odxmt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s3uhu")
+"texture": SubResource("AtlasTexture_x42fo")
 }],
 "loop": true,
 "name": &"idle",
@@ -229,26 +238,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5al46")
+"texture": SubResource("AtlasTexture_kyc3v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s2i53")
+"texture": SubResource("AtlasTexture_qyca6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_07apq")
+"texture": SubResource("AtlasTexture_a0x0h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n2sqo")
+"texture": SubResource("AtlasTexture_b6gut")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yk51h")
+"texture": SubResource("AtlasTexture_05u66")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kur26")
+"texture": SubResource("AtlasTexture_shass")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i17fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nnyn")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfoxo"]
@@ -283,7 +298,6 @@ position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(0.858388, 0.858388)
 sprite_frames = SubResource("SpriteFrames_7c7g2")
 animation = &"walk"
-frame = 1
 
 [node name="Area2D" parent="." instance=ExtResource("2_6jp28")]
 texture_filter = 1
