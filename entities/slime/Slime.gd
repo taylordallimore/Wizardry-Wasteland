@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var health = 3
 
+
 @onready var anim = $AnimationPlayer
 @onready var player = get_node("/root/Level_1/player")
 
@@ -15,6 +16,7 @@ func take_damage():
 	health -= 1
 	if health <= 0:
 		queue_free()
+		player.score += 1
 
 
 func deal_damage():

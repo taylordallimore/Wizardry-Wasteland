@@ -1,8 +1,8 @@
 extends Node2D
 
+
 func _ready():
-	for i in range(0):
-		spawn_mob()
+	spawn_mob()
 
 
 func spawn_mob():
