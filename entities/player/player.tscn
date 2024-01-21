@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=3 uid="uid://ci6luxbnpbel8"]
 
 [ext_resource type="PackedScene" uid="uid://b240o8ic7ajmf" path="res://entities/player/attacks/gun.tscn" id="2_6jp28"]
-[ext_resource type="Texture2D" path="res://common/assets/wizard.png" id="2_cliwu"]
+[ext_resource type="Texture2D" uid="uid://jp743v6tn63" path="res://common/assets/wizard.png" id="2_cliwu"]
 
 [sub_resource type="GDScript" id="GDScript_53pd3"]
 script/source = "extends CharacterBody2D

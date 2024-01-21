@@ -6,7 +6,6 @@ extends Control
 
 func _ready():
 
-	print(player.connect("health_updated", set_value))
 	player.connect("health_updated", set_value)
 
 
