@@ -1,5 +1,6 @@
-[gd_scene load_steps=37 format=3 uid="uid://uutrakgnh8gj"]
+[gd_scene load_steps=38 format=3 uid="uid://uutrakgnh8gj"]
 
+[ext_resource type="Script" path="res://levels/level2/level_2.gd" id="1_nfwjy"]
 [ext_resource type="Texture2D" uid="uid://bhoyhpw144fw8" path="res://common/assets/Forest BETA V3/Forest Tilesett.png" id="1_u507a"]
 [ext_resource type="Texture2D" uid="uid://dxd4wq0fe374u" path="res://common/assets/Forest BETA V3/Water Tileset.png" id="2_d4kur"]
 [ext_resource type="Texture2D" uid="uid://ddx4e0qxe6aa5" path="res://common/assets/Forest BETA V3/TX Props.png" id="3_tqbk6"]
@@ -18,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://divgugkgnprsm" path="res://common/assets/Forest BETA V3/TX Player.png" id="16_6wlcg"]
 [ext_resource type="PackedScene" uid="uid://ci6luxbnpbel8" path="res://entities/player/player.tscn" id="17_cqhg7"]
 [ext_resource type="PackedScene" uid="uid://jgem82x8umbu" path="res://levels/ui_scenes/ui.tscn" id="18_nrq8t"]
-[ext_resource type="PackedScene" uid="uid://bsvt353o1k28i" path="res://entities/slime/slime.tscn" id="19_6c1mx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjnnu"]
 texture = ExtResource("1_u507a")
@@ -26892,7 +26892,14 @@ sources/13 = SubResource("TileSetAtlasSource_x02iq")
 sources/14 = SubResource("TileSetAtlasSource_nfk6q")
 sources/15 = SubResource("TileSetAtlasSource_r5xos")
 
+[sub_resource type="Curve2D" id="Curve2D_pa7fo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1036, 385, 0, 0, 0, 0, 846, 385, 0, 0, 0, 0, 840, 351, 0, 0, 0, 0, 631, 341, 0, 0, 0, 0, 581, 379, 0, 0, 0, 0, 288, 385, 0, 0, 0, 0, 284, 317, 0, 0, 0, 0, 416, 285, 0, 0, 0, 0, 487, 195, 0, 0, 0, 0, 531, 105, 0, 0, 0, 0, 537, 52, 0, 0, 0, 0, 335, 42, 0, 0, 0, 0, 315, 73, 0, 0, 0, 0, 254, 117, 0, 0, 0, 0, 182, 114, 0, 0, 0, 0, 144, 170, 0, 0, 0, 0, 94, 232, 0, 0, 0, 0, 76, 282, 0, 0, 0, 0, 73, 341, 0, 0, 0, 0, 29, 388, 0, 0, 0, 0, -52, 370, 0, 0, 0, 0, -149, 364, 0, 0, 0, 0, -165, 292, 0, 0, 0, 0, -170, 211, 0, 0, 0, 0, -232, 223, 0, 0, 0, 0, -245, 142, 0, 0, 0, 0, -146, 120, 0, 0, 0, 0, -151, 70, 0, 0, 0, 0, -230, 70, 0, 0, 0, 0, -230, -8, 0, 0, 0, 0, -195, -23, 0, 0, 0, 0, -199, -83, 0, 0, 0, 0, -208, -185, 0, 0, 0, 0, -227, -262, 0, 0, 0, 0, -172, -292, 0, 0, 0, 0, -149, -336, 0, 0, 0, 0, -64, -351, 0, 0, 0, 0, -16, -366, 0, 0, 0, 0, -24, -400, 0, 0, 0, 0, 28, -410, 0, 0, 0, 0, 77, -407, 0, 0, 0, 0, 110, -377, 0, 0, 0, 0, 129, -340, 0, 0, 0, 0, 136, -322, 0, 0, 0, 0, 169, -315, 0, 0, 0, 0, 221, -315, 0, 0, 0, 0, 258, -315, 0, 0, 0, 0, 295, -300, 0, 0, 0, 0, 310, -256, 0, 0, 0, 0, 332, -192, 0, 0, 0, 0, 326, -140, 0, 0, 0, 0, 277, -115, 0, 0, 0, 0, 295, -66, 0, 0, 0, 0, 307, -4, 0, 0, 0, 0, 314, 19, 0, 0, 0, 0, 302, 41, 0, 0, 0, 0, 540, 30, 0, 0, 0, 0, 514, -73, 0, 0, 0, 0, 526, -180, 0, 0, 0, 0, 519, -281, 0, 0, 0, 0, 578, -311, 0, 0, 0, 0, 574, -366, 0, 0, 0, 0, 618, -377, 0, 0, 0, 0, 829, -359, 0, 0, 0, 0, 878, -359, 0, 0, 0, 0, 893, -396, 0, 0, 0, 0, 930, -403, 0, 0, 0, 0, 945, -285, 0, 0, 0, 0, 1022, -296, 0, 0, 0, 0, 1034, -207, 0, 0, 0, 0, 1085, -177, 0, 0, 0, 0, 1078, -78, 0, 0, 0, 0, 1089, -2, 0, 0, 0, 0, 1066, 60, 0, 0, 0, 0, 1075, 156, 0, 0, 0, 0, 1063, 238, 0, 0, 0, 0, 1038, 386)
+}
+point_count = 77
+
 [node name="Level_1" type="Node2D"]
+script = ExtResource("1_nfwjy")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-15, 5)
@@ -26950,17 +26957,16 @@ position = Vector2(636, 30)
 [node name="UI" parent="player" instance=ExtResource("18_nrq8t")]
 position = Vector2(61, 44)
 
-[node name="Slime" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(-33, -74)
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_pa7fo")
 
-[node name="Slime2" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(-141, 149)
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(1036, 385)
+rotation = 3.14159
 
-[node name="Slime3" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(873, 203)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
 
-[node name="Slime4" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(668, -149)
-
-[node name="Slime5" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(280, 349)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
