@@ -1,24 +1,24 @@
-[gd_scene load_steps=37 format=3 uid="uid://do8qr4fd437ph"]
+[gd_scene load_steps=38 format=3 uid="uid://bol2cgkguyh0w"]
 
-[ext_resource type="Texture2D" uid="uid://dso0lni1vkxfr" path="res://common/assets/Forest BETA V3/Forest Tilesett.png" id="1_u507a"]
-[ext_resource type="Texture2D" uid="uid://b0b8qu5nfcy3f" path="res://common/assets/Forest BETA V3/Water Tileset.png" id="2_d4kur"]
-[ext_resource type="Texture2D" uid="uid://brt3r5c2437ry" path="res://common/assets/Forest BETA V3/TX Props.png" id="3_tqbk6"]
-[ext_resource type="Texture2D" uid="uid://cdvc10heraull" path="res://common/assets/Forest BETA V3/TX Shadow Plant.png" id="4_hcpma"]
-[ext_resource type="Texture2D" uid="uid://dab6skja1b51s" path="res://common/assets/Forest BETA V3/TX Shadow.png" id="5_6eiol"]
-[ext_resource type="Texture2D" uid="uid://b4npvw0qhcnq7" path="res://common/assets/Forest BETA V3/TX Struct.png" id="6_k00pi"]
-[ext_resource type="Texture2D" uid="uid://cssa7tupbm1sv" path="res://common/assets/Forest BETA V3/TX Tileset Grass.png" id="7_gxmth"]
-[ext_resource type="Texture2D" uid="uid://w43i4i4wmlir" path="res://common/assets/Forest BETA V3/TX Tileset Stone Ground.png" id="8_h6p85"]
-[ext_resource type="Texture2D" uid="uid://bs74kxdl5xu6c" path="res://common/assets/Forest BETA V3/Settlement.png" id="9_2nble"]
-[ext_resource type="Texture2D" uid="uid://o4ha1samux72" path="res://common/assets/Forest BETA V3/Trees.png" id="10_1fjwd"]
-[ext_resource type="Texture2D" uid="uid://dw3wkcnneq5wp" path="res://common/assets/Forest BETA V3/Forest Cliff.png" id="11_wu3th"]
-[ext_resource type="Texture2D" uid="uid://cab4out0invdg" path="res://common/assets/Forest BETA V3/Forest Structures.png" id="12_bpmul"]
-[ext_resource type="Texture2D" uid="uid://i2u51o5pft4k" path="res://common/assets/Forest BETA V3/Sample.png" id="13_dkcbv"]
-[ext_resource type="Texture2D" uid="uid://dfgtradnq23a2" path="res://common/assets/Forest BETA V3/TX Tileset Wall.png" id="14_3ilhd"]
-[ext_resource type="Texture2D" uid="uid://cy637x0vvh1ai" path="res://common/assets/Forest BETA V3/TX Plant.png" id="15_qywd1"]
-[ext_resource type="Texture2D" uid="uid://bxg6425ln42ci" path="res://common/assets/Forest BETA V3/TX Player.png" id="16_6wlcg"]
+[ext_resource type="Script" path="res://levels/level2/biggerlevel_2.gd" id="1_nkahv"]
+[ext_resource type="Texture2D" uid="uid://bhoyhpw144fw8" path="res://common/assets/Forest BETA V3/Forest Tilesett.png" id="1_u507a"]
+[ext_resource type="Texture2D" uid="uid://dxd4wq0fe374u" path="res://common/assets/Forest BETA V3/Water Tileset.png" id="2_d4kur"]
+[ext_resource type="Texture2D" uid="uid://ddx4e0qxe6aa5" path="res://common/assets/Forest BETA V3/TX Props.png" id="3_tqbk6"]
+[ext_resource type="Texture2D" uid="uid://ketw7fm0q6vc" path="res://common/assets/Forest BETA V3/TX Shadow Plant.png" id="4_hcpma"]
+[ext_resource type="Texture2D" uid="uid://ckpc3e6bsky0u" path="res://common/assets/Forest BETA V3/TX Shadow.png" id="5_6eiol"]
+[ext_resource type="Texture2D" uid="uid://csko4i086a7c5" path="res://common/assets/Forest BETA V3/TX Struct.png" id="6_k00pi"]
+[ext_resource type="Texture2D" uid="uid://qtmcck0fl60u" path="res://common/assets/Forest BETA V3/TX Tileset Grass.png" id="7_gxmth"]
+[ext_resource type="Texture2D" uid="uid://dchnapce1x6jx" path="res://common/assets/Forest BETA V3/TX Tileset Stone Ground.png" id="8_h6p85"]
+[ext_resource type="Texture2D" uid="uid://dgntr04pchqvn" path="res://common/assets/Forest BETA V3/Settlement.png" id="9_2nble"]
+[ext_resource type="Texture2D" uid="uid://cvpoxwqxxqmux" path="res://common/assets/Forest BETA V3/Trees.png" id="10_1fjwd"]
+[ext_resource type="Texture2D" uid="uid://jm2lnf0a2tno" path="res://common/assets/Forest BETA V3/Forest Cliff.png" id="11_wu3th"]
+[ext_resource type="Texture2D" uid="uid://cybn7cu27fek" path="res://common/assets/Forest BETA V3/Forest Structures.png" id="12_bpmul"]
+[ext_resource type="Texture2D" uid="uid://dtiyqein8t5k5" path="res://common/assets/Forest BETA V3/Sample.png" id="13_dkcbv"]
+[ext_resource type="Texture2D" uid="uid://cvonwoo3qp1h0" path="res://common/assets/Forest BETA V3/TX Tileset Wall.png" id="14_3ilhd"]
+[ext_resource type="Texture2D" uid="uid://bpdktj8gll4vy" path="res://common/assets/Forest BETA V3/TX Plant.png" id="15_qywd1"]
+[ext_resource type="Texture2D" uid="uid://divgugkgnprsm" path="res://common/assets/Forest BETA V3/TX Player.png" id="16_6wlcg"]
 [ext_resource type="PackedScene" uid="uid://ci6luxbnpbel8" path="res://entities/player/player.tscn" id="17_cqhg7"]
 [ext_resource type="PackedScene" uid="uid://do20qga8p4tgd" path="res://ui.tscn" id="18_nrq8t"]
-[ext_resource type="PackedScene" uid="uid://bsvt353o1k28i" path="res://entities/slime/slime.tscn" id="19_6c1mx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjnnu"]
 texture = ExtResource("1_u507a")
@@ -26892,7 +26892,14 @@ sources/13 = SubResource("TileSetAtlasSource_x02iq")
 sources/14 = SubResource("TileSetAtlasSource_nfk6q")
 sources/15 = SubResource("TileSetAtlasSource_r5xos")
 
+[sub_resource type="Curve2D" id="Curve2D_c7brn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 25, -389, 0, 0, 0, 0, -34, -385, 0, 0, 0, 0, -34, -329, 0, 0, 0, 0, -164, -343, 0, 0, 0, 0, -171, -284, 0, 0, 0, 0, -241, -238, 0, 0, 0, 0, -249, -165, 0, 0, 0, 0, -209, -164, 0, 0, 0, 0, -193, 128, 0, 0, 0, 0, -238, 141, 0, 0, 0, 0, -242, 294, 0, 0, 0, 0, -163, 304, 0, 0, 0, 0, -168, 366, 0, 0, 0, 0, 60, 370, 0, 0, 0, 0, 70, 249, 0, 0, 0, 0, 114, 249, 0, 0, 0, 0, 148, 174, 0, 0, 0, 0, 162, 133, 0, 0, 0, 0, 288, 95, 0, 0, 0, 0, 318, 59, 0, 0, 0, 0, 547, 59, 0, 0, 0, 0, 512, 157, 0, 0, 0, 0, 479, 212, 0, 0, 0, 0, 406, 280, 0, 0, 0, 0, 352, 318, 0, 0, 0, 0, 282, 321, 0, 0, 0, 0, 285, 383, 0, 0, 0, 0, 576, 380, 0, 0, 0, 0, 571, 354, 0, 0, 0, 0, 1065, 351, 0, 0, 0, 0, 1076, -170, 0, 0, 0, 0, 1013, -276, 0, 0, 0, 0, 968, -305, 0, 0, 0, 0, 926, -305, 0, 0, 0, 0, 930, -399, 0, 0, 0, 0, 895, -411, 0, 0, 0, 0, 883, -359, 0, 0, 0, 0, 603, -379, 0, 0, 0, 0, 565, -353, 0, 0, 0, 0, 550, -270, 0, 0, 0, 0, 526, -161, 0, 0, 0, 0, 497, -79, 0, 0, 0, 0, 543, -35, 0, 0, 0, 0, 550, 37, 0, 0, 0, 0, 303, 37, 0, 0, 0, 0, 311, -193, 0, 0, 0, 0, 297, -293, 0, 0, 0, 0, 114, -346, 0, 0, 0, 0, 51, -408, 0, 0, 0, 0, 52, -535, 0, 0, 0, 0, 229, -544, 0, 0, 0, 0, 367, -614, 0, 0, 0, 0, 537, -866, 0, 0, 0, 0, 517, -1080, 0, 0, 0, 0, 436, -1130, 0, 0, 0, 0, 264, -1114, 0, 0, 0, 0, 280, -1242, 0, 0, 0, 0, 287, -1345, 0, 0, 0, 0, 425, -1404, 0, 0, 0, 0, 663, -1368, 0, 0, 0, 0, 742, -1295, 0, 0, 0, 0, 861, -1226, 0, 0, 0, 0, 894, -1180, 0, 0, 0, 0, 861, -1094, 0, 0, 0, 0, 759, -1064, 0, 0, 0, 0, 683, -988, 0, 0, 0, 0, 735, -922, 0, 0, 0, 0, 768, -847, 0, 0, 0, 0, 823, -737, 0, 0, 0, 0, 837, -671, 0, 0, 0, 0, 1078, -648, 0, 0, 0, 0, 1223, -598, 0, 0, 0, 0, 1329, -601, 0, 0, 0, 0, 1408, -694, 0, 0, 0, 0, 1451, -830, 0, 0, 0, 0, 1404, -1021, 0, 0, 0, 0, 1343, -1119, 0, 0, 0, 0, 982, -1367, 0, 0, 0, 0, 760, -1417, 0, 0, 0, 0, 516, -1456, 0, 0, 0, 0, 199, -1457, 0, 0, 0, 0, 149, -1371, 0, 0, 0, 0, 100, -1309, 0, 0, 0, 0, 10, -1250, 0, 0, 0, 0, -49, -1180, 0, 0, 0, 0, -138, -1200, 0, 0, 0, 0, -182, -1286, 0, 0, 0, 0, -241, -1308, 0, 0, 0, 0, -310, -1309, 0, 0, 0, 0, -317, -1250, 0, 0, 0, 0, -321, -1170, 0, 0, 0, 0, -434, -1168, 0, 0, 0, 0, -439, -1124, 0, 0, 0, 0, -302, -1107, 0, 0, 0, 0, -319, -1051, 0, 0, 0, 0, -285, -959, 0, 0, 0, 0, -389, -869, 0, 0, 0, 0, -348, -761, 0, 0, 0, 0, -274, -663, 0, 0, 0, 0, -307, -567, 0, 0, 0, 0, -340, -491, 0, 0, 0, 0, -298, -487, 0, 0, 0, 0, -249, -533, 0, 0, 0, 0, -199, -603, 0, 0, 0, 0, -163, -652, 0, 0, 0, 0, -119, -614, 0, 0, 0, 0, -37, -597, 0, 0, 0, 0, 9, -567, 0, 0, 0, 0, 14, -537, 0, 0, 0, 0, 34, -530, 0, 0, 0, 0, 22, -392)
+}
+point_count = 111
+
 [node name="Level_1" type="Node2D"]
+script = ExtResource("1_nkahv")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-15, 5)
@@ -26948,20 +26955,18 @@ texture_filter = 1
 position = Vector2(636, 30)
 
 [node name="UI" parent="player" instance=ExtResource("18_nrq8t")]
-visible = false
 position = Vector2(61, 44)
 
-[node name="Slime" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(-33, -74)
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_c7brn")
 
-[node name="Slime2" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(-141, 149)
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(25, -389)
+rotation = 3.0739
 
-[node name="Slime3" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(873, 203)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
 
-[node name="Slime4" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(668, -149)
-
-[node name="Slime5" parent="." instance=ExtResource("19_6c1mx")]
-position = Vector2(280, 349)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
