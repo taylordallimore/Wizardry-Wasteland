@@ -1,42 +1,66 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxxrmqjnukc41"]
+[gd_scene load_steps=12 format=3 uid="uid://lxawp5qy0rvn"]
 
-[ext_resource type="Script" path="res://Slime.gd" id="1_jdpa3"]
-[ext_resource type="Texture2D" uid="uid://deihtuux677jo" path="res://common/assets/Slime red.png" id="2_t4xnv"]
+[ext_resource type="Texture2D" uid="uid://big0mvpna3nqx" path="res://common/assets/Slime yellow.png" id="1_ucbta"]
+
+[sub_resource type="GDScript" id="GDScript_hh1aa"]
+script/source = "extends CharacterBody2D
+
+var health = 2
+
+@onready var anim = $AnimationPlayer
+@onready var player = get_node(\"/root/Level_1/player\")
+
+func _physics_process(delta):
+	anim.play(\"idle\")
+	var direction = global_position.direction_to(player.global_position)
+	velocity = direction * 100.0
+	move_and_slide()
+
+func take_damage():
+	health -= 1
+	if health <= 0:
+		queue_free()
+		player.score += 1
+
+
+func deal_damage():
+	player.damage(5)
+"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3br1x"]
 radius = 8.0
 height = 16.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jcvcl"]
-atlas = ExtResource("2_t4xnv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfbea"]
+atlas = ExtResource("1_ucbta")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_67b4f"]
-atlas = ExtResource("2_t4xnv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i44jc"]
+atlas = ExtResource("1_ucbta")
 region = Rect2(48, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t8sad"]
-atlas = ExtResource("2_t4xnv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tr4r"]
+atlas = ExtResource("1_ucbta")
 region = Rect2(96, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e2yq4"]
-atlas = ExtResource("2_t4xnv")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ipg6"]
+atlas = ExtResource("1_ucbta")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bnbnf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jcvcl")
+"texture": SubResource("AtlasTexture_dfbea")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_67b4f")
+"texture": SubResource("AtlasTexture_i44jc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t8sad")
+"texture": SubResource("AtlasTexture_5tr4r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e2yq4")
+"texture": SubResource("AtlasTexture_7ipg6")
 }],
 "loop": true,
 "name": &"idle",
@@ -93,11 +117,11 @@ _data = {
 "idle": SubResource("Animation_gaks3")
 }
 
-[node name="Slime" type="CharacterBody2D"]
+[node name="Slime2" type="CharacterBody2D"]
 light_mask = 2
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_jdpa3")
+script = SubResource("GDScript_hh1aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
