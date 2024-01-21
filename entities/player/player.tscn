@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=3 uid="uid://ci6luxbnpbel8"]
 
 [ext_resource type="PackedScene" uid="uid://b240o8ic7ajmf" path="res://entities/player/attacks/gun.tscn" id="2_6jp28"]
-[ext_resource type="Texture2D" uid="uid://b2ym4cb8dptti" path="res://common/assets/wizard.png" id="2_cliwu"]
+[ext_resource type="Texture2D" uid="uid://jp743v6tn63" path="res://common/assets/wizard.png" id="2_cliwu"]
 
 [sub_resource type="GDScript" id="GDScript_53pd3"]
 script/source = "extends CharacterBody2D
@@ -9,7 +9,6 @@ signal health_depleted
 var health = 100.0
 @onready var anim = $AnimationPlayer
 var speed = 200  
-var score = 0
 
 signal health_updated(new_value)
 
@@ -29,9 +28,6 @@ func _process(_delta):
 		anim.play(\"idle\")
 		
 func _physics_process(delta):
-	if score > 5:
-		print(\"win\")
-		
 	var direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
 	velocity = direction * speed
 	#animation.play(\"idle\")

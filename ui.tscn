@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://do20qga8p4tgd"]
+[gd_scene load_steps=6 format=3 uid="uid://do20qga8p4tgd"]
 
+[ext_resource type="Script" path="res://UI.gd" id="1_bgyki"]
 [ext_resource type="Texture2D" uid="uid://dfgtradnq23a2" path="res://common/assets/Forest BETA V3/TX Tileset Wall.png" id="1_x2thm"]
 [ext_resource type="PackedScene" uid="uid://bwer3iowqj34f" path="res://common/healthbar/healthbar.tscn" id="2_u5vcr"]
 
@@ -204,6 +205,7 @@ sources/0 = SubResource("TileSetAtlasSource_r1v7c")
 [node name="UI" type="Node2D"]
 
 [node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("1_bgyki")
 
 [node name="TileMap" type="TileMap" parent="UI"]
 tile_set = SubResource("TileSet_72ytg")
