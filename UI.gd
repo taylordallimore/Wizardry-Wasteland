@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 
-@onready var counter = get_node("Counter")
+@onready var counter = $Counter
 
 func _ready():
 	pass

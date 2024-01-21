@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jc8gi6q4odpb"]
+[gd_scene load_steps=12 format=3 uid="uid://bsvt353o1k28i"]
 
 [ext_resource type="Script" path="res://entities/slime/Slime.gd" id="1_jdpa3"]
 [ext_resource type="Texture2D" uid="uid://dr74e60u2f1dr" path="res://common/assets/Slime red.png" id="2_t4xnv"]
@@ -93,7 +93,7 @@ _data = {
 "idle": SubResource("Animation_gaks3")
 }
 
-[node name="Slime" type="CharacterBody2D"]
+[node name="Slime2" type="CharacterBody2D"]
 light_mask = 2
 collision_layer = 2
 collision_mask = 3

@@ -21,7 +21,6 @@ func take_damage():
 		print("enemy killed in slime")
 		GlobalSignals.enemiesleft = GlobalSignals.enemiesleft - 1
 		queue_free()
-		player.score += 1
 
 
 func deal_damage():
