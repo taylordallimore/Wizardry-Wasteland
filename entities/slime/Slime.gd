@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var health = 3
+var health = 2
 
 
 @onready var anim = $AnimationPlayer

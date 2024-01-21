@@ -28,6 +28,9 @@ func _process(_delta):
 		anim.play(\"idle\")
 		
 func _physics_process(delta):
+	if score > 20:
+		print(\"win\")
+		
 	var direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
 	velocity = direction * speed
 	#animation.play(\"idle\")
