@@ -26898,7 +26898,7 @@ _data = {
 }
 point_count = 77
 
-[node name="Level_1" type="Node2D"]
+[node name="Level_2" type="Node2D"]
 script = ExtResource("1_nfwjy")
 
 [node name="TileMap" type="TileMap" parent="."]

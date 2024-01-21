@@ -104,6 +104,7 @@ shape = SubResource("CircleShape2D_7b2f3")
 scale = Vector2(0.0575343, 0.0575343)
 sprite_frames = SubResource("SpriteFrames_jdwul")
 animation = &"idle"
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {

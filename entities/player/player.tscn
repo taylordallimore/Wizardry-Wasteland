@@ -298,6 +298,7 @@ position = Vector2(-4.76837e-07, -4.76837e-07)
 scale = Vector2(0.858388, 0.858388)
 sprite_frames = SubResource("SpriteFrames_7c7g2")
 animation = &"walk"
+frame = 1
 
 [node name="Area2D" parent="." instance=ExtResource("2_6jp28")]
 texture_filter = 1
