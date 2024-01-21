@@ -6,16 +6,16 @@ TO DO List:
 - [x] Create a wizard game
 - [ ] Involves magic and light
 To begin with:
-  - [ ] basic map
-  - [ ] player character
-  - [ ] enemy character
-  - [ ] a magic spell attack
+  - [x] basic map
+  - [x] player character
+  - [x] enemy character
+  - [x] a magic spell attack
   - [ ] light magic attack
-  - [ ] UI
+  - [x] UI
   - [ ] game mechanics
-  - [ ] HitBoxs and Collisions
+  - [x] HitBoxs and Collisions
   - [ ] Create the game loop
-  - [ ] Hud
+  - [x] Hud
 Stuff for Later  
 - [ ] Scoring system
 - [ ] Dark/Light
