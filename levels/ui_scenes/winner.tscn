@@ -71,3 +71,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_swfk6")
 text = "Play Again"
 
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]
