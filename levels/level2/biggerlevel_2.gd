@@ -27,7 +27,7 @@ func spawn_big_mob():
 
 func _on_timer_timeout():
 	print(mob_num)
-	if mob_num < 50:
+	if mob_num < 200:
 		if current_mob == 0:
 			spawn_mob()
 			mob_num += 1

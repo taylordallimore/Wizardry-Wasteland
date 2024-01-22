@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://duqg33p5xt8un"]
+
+[ext_resource type="Script" path="res://items/pickupables/healthpack.gd" id="1_ixlk4"]
+[ext_resource type="Texture2D" uid="uid://bv06e247chsbc" path="res://common/assets/healthpack.png" id="1_xc0kb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl386"]
+size = Vector2(30, 28)
+
+[sub_resource type="Animation" id="Animation_8rmu5"]
+resource_name = "Floating"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ispy3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oj54d"]
+_data = {
+"Floating": SubResource("Animation_8rmu5"),
+"RESET": SubResource("Animation_ispy3")
+}
+
+[node name="Healthpack" type="Area2D"]
+script = ExtResource("1_ixlk4")
+
+[node name="Healthpackimg" type="Sprite2D" parent="."]
+scale = Vector2(0.058, 0.055)
+texture = ExtResource("1_xc0kb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fl386")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Healthpackimg")
+speed_scale = 0.1
+libraries = {
+"": SubResource("AnimationLibrary_oj54d")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

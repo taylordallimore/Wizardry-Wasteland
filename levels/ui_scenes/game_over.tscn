@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://drimdygdv8jqf"]
+
+[ext_resource type="Texture2D" uid="uid://diu0rt02rysdb" path="res://common/assets/Leonardo_Diffusion_XL_A_2D_Ghost_Wizard_surrounded_by_slimes_w_3.jpg" id="1_grbwk"]
+[ext_resource type="Script" path="res://levels/ui_scenes/game_over.gd" id="1_xw0fx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0q7tm"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0823529)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar6xx"]
+bg_color = Color(0.882353, 0.482353, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.968627, 0.968627, 0.968627, 0.65098)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+expand_margin_left = 3.0
+expand_margin_top = 1.0
+expand_margin_right = 3.0
+expand_margin_bottom = 2.0
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_xw0fx")
+
+[node name="LeonardoDiffusionXlA2dGhostWizardSurroundedBySlimesW3" type="Sprite2D" parent="."]
+position = Vector2(560.971, 327.4)
+scale = Vector2(0.787725, 0.811606)
+texture = ExtResource("1_grbwk")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 483.0
+offset_top = 221.0
+offset_right = 712.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 53
+theme_override_styles/normal = SubResource("StyleBoxFlat_0q7tm")
+text = "You Died"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = -10.0
+offset_top = -9.0
+offset_right = 1199.0
+offset_bottom = 673.0
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_right = 256
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 16
+
+[node name="Restart Game" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ar6xx")
+text = "Restart Game"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ar6xx")
+text = "Exit Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/Restart Game" to="." method="_on_restart_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/Exit" to="." method="_on_exit_pressed"]

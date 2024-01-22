@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c2g6t41m4aier"]
 
-[ext_resource type="Texture2D" uid="uid://k051m6py7gvu" path="res://common/assets/Forest BETA V3/dark_green_tree.png" id="1_r6tab"]
+[ext_resource type="Texture2D" uid="uid://c25u5fnpnfq2a" path="res://common/assets/Forest BETA V3/dark_green_tree.png" id="1_r6tab"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjeai"]
 radius = 37.0

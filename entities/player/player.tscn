@@ -39,10 +39,16 @@ func _physics_process(delta):
 		health -= DAMAGE_RATE * overlapping_mobs.size() * delta
 		emit_signal(\"health_updated\", health)
 		if health <= 0.0:
+			kill()
 			health_depleted.emit()
 	
-
-
+func heal():
+	health = 100
+	emit_signal(\"health_updated\",health)
+ 
+func kill():
+	queue_free()
+	get_tree().change_scene_to_file(\"res://levels/ui_scenes/game_over.tscn\")
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5sqwi"]
@@ -270,7 +276,7 @@ animations = [{
 radius = 11.0
 height = 42.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 script = SubResource("GDScript_53pd3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -300,7 +306,7 @@ sprite_frames = SubResource("SpriteFrames_7c7g2")
 animation = &"walk"
 frame = 1
 
-[node name="Area2D" parent="." instance=ExtResource("2_6jp28")]
+[node name="Area2D" parent="." groups=["player"] instance=ExtResource("2_6jp28")]
 texture_filter = 1
 
 [node name="hurtbix" type="Area2D" parent="."]

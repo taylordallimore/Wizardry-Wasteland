@@ -5,7 +5,7 @@ var health = 1
 @onready var anim = $AnimationPlayer
 @onready var player = get_node("/root/Level_1/player")
 
-func _physics_process(delta):
+func _physics_process(_delta):
     anim.play("idle")
     var direction = global_position.direction_to(player.global_position)
     velocity = direction * 75.0
@@ -14,7 +14,7 @@ func _physics_process(delta):
 func take_damage():
     health -= 1
     if health <= 0:
-        # GlobalSignals.enemiesleft = GlobalSignals.enemiesleft - 1
+        GlobalSignals.enemiesleft = GlobalSignals.enemiesleft - 1
         queue_free()
 
 

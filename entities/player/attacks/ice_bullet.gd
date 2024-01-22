@@ -1,9 +1,12 @@
 extends Area2D
 var travelled_distance = 0
+@onready var animation = $AnimatedSprite2D/AnimationPlayer
 
 func _physics_process(delta):
-	const SPEED = 1000
-	const RANGE = 1200
+	animation.play("ice")
+
+	const SPEED = 600
+	const RANGE = 4000
 
 	var direction = Vector2.RIGHT.rotated(rotation) 
 	position += direction * SPEED * delta
@@ -15,4 +18,9 @@ func _physics_process(delta):
 func _on_body_entered(body:Node2D):
 	queue_free()
 	if body.has_method("take_damage"):
+		print("ice hit")
 		body.take_damage()
+
+
+func _ready():
+	animation.play("ice")

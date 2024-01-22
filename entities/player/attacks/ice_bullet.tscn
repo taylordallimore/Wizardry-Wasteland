@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=3 uid="uid://dd3dto1mgndhu"]
+
+[ext_resource type="Script" path="res://entities/player/attacks/ice_bullet.gd" id="1_8l3fn"]
+[ext_resource type="Texture2D" uid="uid://wht75xr7ikx1" path="res://common/assets/magic_spells/iceball/I5050-1.png" id="1_ks1fc"]
+[ext_resource type="Texture2D" uid="uid://bd0kg3cqax5ie" path="res://common/assets/magic_spells/iceball/I5050-2.png" id="2_yrp3r"]
+[ext_resource type="Texture2D" uid="uid://cx6644uhg5m6u" path="res://common/assets/magic_spells/iceball/I5050-3.png" id="3_iktct"]
+[ext_resource type="Texture2D" uid="uid://gl4y5ii08upt" path="res://common/assets/magic_spells/iceball/I5050-4.png" id="4_j3cis"]
+[ext_resource type="Texture2D" uid="uid://bvl04qmnxrr5t" path="res://common/assets/magic_spells/iceball/I5050-5.png" id="5_qlqrn"]
+[ext_resource type="Texture2D" uid="uid://bvrtrqjlqcfto" path="res://common/assets/magic_spells/iceball/I5050-6.png" id="6_lgb33"]
+[ext_resource type="Texture2D" uid="uid://deae82apf3qov" path="res://common/assets/magic_spells/iceball/I5050-7.png" id="7_wd5o1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3uqu5"]
+radius = 6.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o22v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ks1fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yrp3r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iktct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j3cis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qlqrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lgb33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wd5o1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_d6j32"]
+resource_name = "ice"
+step = 0.005
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sprite_frames")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("SpriteFrames_2o22v")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.005, 0.01, 0.015, 0.02, 0.025, 0.03, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_q2kv0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ry3m6"]
+_data = {
+"RESET": SubResource("Animation_q2kv0"),
+"ice": SubResource("Animation_d6j32")
+}
+
+[node name="IceBullet" type="Area2D"]
+top_level = true
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_8l3fn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3uqu5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0580788, 0.058)
+sprite_frames = SubResource("SpriteFrames_2o22v")
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+speed_scale = 0.5
+libraries = {
+"": SubResource("AnimationLibrary_ry3m6")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

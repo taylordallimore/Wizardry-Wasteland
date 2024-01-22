@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpa15lkwd65hj"]
+
+[ext_resource type="Script" path="res://levels/ui_scenes/winner.gd" id="1_rmxll"]
+[ext_resource type="Texture2D" uid="uid://crsn6dmhsb8i8" path="res://common/assets/Leonardo_Diffusion_XL_A_2D_Ghost_Wizard_surrounded_by_slimes_w_2.jpg" id="2_noq2e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdqv3"]
+bg_color = Color(0.00922149, 0.631754, 0.176131, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.968627, 0.968627, 0.968627, 0.65098)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+expand_margin_left = 3.0
+expand_margin_top = 1.0
+expand_margin_right = 3.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swfk6"]
+bg_color = Color(0.00922149, 0.631754, 0.176131, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.968627, 0.968627, 0.968627, 0.65098)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+expand_margin_left = 3.0
+expand_margin_top = 1.0
+expand_margin_right = 3.0
+expand_margin_bottom = 2.0
+
+[node name="Winner" type="Node2D"]
+script = ExtResource("1_rmxll")
+
+[node name="LeonardoDiffusionXlA2dGhostWizardSurroundedBySlimesW2" type="Sprite2D" parent="."]
+position = Vector2(590.75, 330.25)
+scale = Vector2(0.786746, 0.791853)
+texture = ExtResource("2_noq2e")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 210.0
+offset_top = 297.0
+offset_right = 1070.0
+offset_bottom = 334.0
+theme_override_colors/font_color = Color(0.00784314, 0.631373, 0.176471, 1)
+theme_override_font_sizes/font_size = 24
+text = "Well done you beat all the slimes! Thanks for playing Wizadry-Wasteland..."
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 588.0
+offset_top = 391.0
+offset_right = 675.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tdqv3")
+text = "Exit Game"
+
+[node name="PlayAgain" type="Button" parent="."]
+offset_left = 585.0
+offset_top = 347.0
+offset_right = 673.0
+offset_bottom = 378.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_swfk6")
+text = "Play Again"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
