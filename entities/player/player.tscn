@@ -52,8 +52,8 @@ func kill():
 "
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5sqwi"]
-radius = 8.0
-height = 26.0
+radius = 6.0
+height = 12.0
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_xc2it"]
 
@@ -88,6 +88,7 @@ nodes/idle_bs2d/position = Vector2(80, 200)
 node_connections = [&"output", 0, &"TimeScale", &"TimeScale", 0, &"idle_bs2d"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_xo7si"]
+graph_offset = Vector2(162.285, 222.666)
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1pma7"]
 advance_mode = 2
@@ -280,7 +281,7 @@ height = 42.0
 script = SubResource("GDScript_53pd3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
+position = Vector2(0, 7)
 shape = SubResource("CapsuleShape2D_5sqwi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -294,17 +295,19 @@ parameters/idle/idle_bs2d/blend_position = Vector2(0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../CollisionShape2D")
+speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_vweqc")
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-4.76837e-07, -4.76837e-07)
+position = Vector2(-2.84217e-14, -2.84217e-14)
 scale = Vector2(0.858388, 0.858388)
 sprite_frames = SubResource("SpriteFrames_7c7g2")
 animation = &"walk"
 frame = 1
+metadata/_edit_lock_ = true
 
 [node name="Area2D" parent="." groups=["player"] instance=ExtResource("2_6jp28")]
 texture_filter = 1

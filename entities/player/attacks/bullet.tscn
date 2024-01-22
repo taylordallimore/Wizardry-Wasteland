@@ -87,7 +87,7 @@ _data = {
 top_level = true
 rotation = 1.22295
 collision_layer = 0
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_j3wth")
 
 [node name="Frame0007" type="Sprite2D" parent="."]

@@ -3,6 +3,7 @@ extends Area2D
 @onready var bulletype = "fire";
 @onready var fireimg = $Marker2D/fireball
 @onready var iceimg = $Marker2D/iceball
+@onready var timer = $Timer
 
 func _physics_process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
@@ -18,10 +19,12 @@ func shoot():
 
 	if bulletype == "fire":
 		new_bullet = BULLET.instantiate()
+		timer.wait_time = 1
 		fireimg.visible = true
 		iceimg.visible = false
 	else:
 		new_bullet = ICE_BULLET.instantiate()
+		timer.wait_time = 0.6
 		iceimg.visible = true
 		fireimg.visible = false
 	
